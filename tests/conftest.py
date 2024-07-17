@@ -1,5 +1,6 @@
 import os
 import pytest
+import shutil
 import zipfile
 from script_os import FILES_DIR, FOLDER_DIR
 
@@ -11,3 +12,5 @@ def files_archive():
     with zipfile.ZipFile(os.path.join(FOLDER_DIR, "archive.zip"), 'w') as zf:
         for file in os.listdir(FILES_DIR):
             zf.write(os.path.join(FILES_DIR, file), file)
+    yield
+    shutil.rmtree(FOLDER_DIR)

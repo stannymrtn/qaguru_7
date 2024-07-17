@@ -14,7 +14,6 @@ def test_xlsx_file():
             wb = load_workbook(filename=excel_file)
             sheet = wb.active
             cell_value = sheet.cell(row=1, column=2).value
-            print(f"Содержимое ячейки в строке {1} и столбце {2}: {cell_value}")
             name = 'ID Postback'
             assert name in cell_value, f"Название колонки: {name} есть в файле"
 

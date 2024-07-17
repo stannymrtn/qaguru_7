@@ -1,8 +1,4 @@
 import os
-import zipfile
-import pytest
-from openpyxl import load_workbook
-from pypdf import PdfReader
 
 # Определение путей
 CURRENT_FILE = os.path.abspath(__file__)  # Получаем абсолютный путь к текущему файлу
